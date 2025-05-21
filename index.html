@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тетрис</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-info">
+            <h1>Тетрис</h1>
+            <div class="score">Очки: <span id="score">0</span></div>
+            <div class="level">Уровень: <span id="level">1</span></div>
+            <button id="newGame">Новая игра</button>
+            <button id="highScores">Таблица рекордов</button>
+        </div>
+        <div id="gameBoard"></div>
+    </div>
+
+    <div id="highScoresModal" class="modal">
+        <div class="modal-content">
+            <h2>Таблица рекордов</h2>
+            <div id="highScoresList"></div>
+            <button id="closeModal">Закрыть</button>
+        </div>
+    </div>
+
+    <div id="nameModal" class="modal">
+        <div class="modal-content">
+            <h2>Новый рекорд!</h2>
+            <p>Введите ваше имя:</p>
+            <input type="text" id="playerName" maxlength="20">
+            <button id="saveScore">Сохранить</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html> 

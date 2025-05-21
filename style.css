@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.game-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(20, 30px);
+    gap: 1px;
+    background-color: #1a1a1a;
+    border: 2px solid #444;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #2d2d2d;
+}
+
+.cell.filled {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Цвета фигур */
+.cell.filled.I { background-color: #00f0f0; }
+.cell.filled.O { background-color: #f0f000; }
+.cell.filled.T { background-color: #a000f0; }
+.cell.filled.L { background-color: #f0a000; }
+.cell.filled.J { background-color: #0000f0; }
+.cell.filled.Z { background-color: #f00000; }
+.cell.filled.S { background-color: #00f000; }
+
+.cell.not-started {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    opacity: 0.5;
+}
+
+.cell.not-started::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 45%, #333 45%, #333 55%, transparent 55%);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #666;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    color: white;
+}
+
+#highScoresList {
+    margin: 20px 0;
+}
+
+#highScoresList div {
+    padding: 5px 0;
+    border-bottom: 1px solid #444;
+}
+
+#playerName {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 4px;
+}
+
+#playerName:focus {
+    outline: none;
+    border-color: #666;
+} 
